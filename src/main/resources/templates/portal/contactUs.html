@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <!-- Basic Page Needs -->
+        <meta charset="UTF-8">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <title>联系我们</title>
+
+        <meta name="author" content="themsflat.com">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+        <link rel="bookmark" href="/images/favicon.ico" type="image/x-icon" />
+    <!-- Theme style -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <!-- Responsive -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}">
+    </head>
+    <body class="bg-111111">
+        <!-- <div id="loading-overlay">
+            <div class="loader"></div>
+        </div>  -->
+
+        <header id="header" class="style2">
+            <div class="container container-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header-wrap style2 clearfix">
+                            <div id="logo">
+                                <a href="/portal/index/index">
+                                    <img src="/images/logo.png"
+                                         alt="logo" width="320" height="36"
+                                         data-retina="/images/logo.png"
+                                         data-width="200"
+                                         data-height="26"></a>
+                            </div>
+                            <div class="mobile-button">
+                                <span></span>
+                            </div>
+                            <div class="nav-wrap style2">
+                                <nav id="mainnav" class="mainnav ">
+                                    <ul class="menu">
+                                        <li >
+                                            <a href="/portal/index/index" title="">首页</a>
+                                        </li>
+                                        <li>
+                                            <a class="sub-menu-uj" th:href="@{/portal/company/company}" title="">公司简介</a>
+                                        </li>
+                                        <li>
+                                            <a th:href="@{/portal/news/enterprise}" title="">新闻资讯</a>
+                                            <ul class="sub-menu sub-menu-u">
+                                                <li><a class="sub-menu-uj" th:href="@{/portal/news/enterprise}"
+                                                       title="">企业新闻</a></li>
+                                                <li><a class="sub-menu-ui" th:href="@{/portal/news/industry}" title="">行业动态</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/portal/project/index" title="">产品</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="/portal/project/index" title="">产品展示</a></li>
+                                                <li><a href="/portal/ypsc/index" title="">尤品商城</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href=class="sub-menu-uj" th:href="@{/portal/job/job}" title="">人才招聘</a>
+                                        </li>
+
+                                        <li class="active">
+                                            <a href="/portal/contactus/index">联系我们</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="flat-slider style2">
+            <div class="rev_slider_wrapper fullwidthbanner-container" >
+                <div id="rev-slider1" class="rev_slider fullwidthabanner">
+                    <ul>
+                        <li data-transition="random">
+                            <!-- Main Image -->
+                            <img src="/images/contactUs_bg.jpg" alt="" data-bgposition="center center" data-no-retina>
+                            <div class="overlay"></div>
+                            <!-- Layers -->
+                            <div class="flat-tabs">
+                                <div class="tab-content-service" id="roofing">
+                                    <div class="tp-caption tp-resizeme text-ffb922 font-rubik font-weight-500 text-center"
+                                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                    data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-40','-30']"
+                                    data-fontsize="['48','48','32','20']"
+                                    data-lineheight="['60','60','40','30']"
+                                    data-width="full"
+                                    data-height="none"
+                                    data-whitespace="normal"
+                                    data-transform_idle="o:1;"
+                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                                    data-mask_in="x:0px;y:[100%];" 
+                                    data-mask_out="x:inherit;y:inherit;" 
+                                    data-start="700" 
+                                    data-splitin="none" 
+                                    data-splitout="none" 
+                                    data-responsive_offset="on"><a href="#" class="text-white">关注行内咨询及行内最新动态</a></div>
+                                </div>
+
+                                <div class="tp-caption tp-resizeme font-rubik font-weight-500 text-center"
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['30','30','20','20']"
+                                data-fontsize="['32','32','28','14']"
+                                data-lineheight="['48','48','32','20']"
+                                data-width="full"
+                                data-height="none"
+                                data-whitespace="normal"
+                                data-transform_idle="o:1;"
+                                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+                                data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                data-mask_in="x:0px;y:[100%];" 
+                                data-mask_out="x:inherit;y:inherit;" 
+                                data-start="1000" 
+                                data-splitin="none" 
+                                data-splitout="none" 
+                                data-responsive_offset="on"> <a href="#" class="text-white">关注互联网、关注技术、透析与分享移动互联网行内最新动态</a> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
+      
+        <div class="w_full_row">
+            <div class="container">
+                <div class="row w_map_row" >
+                    <div class="col-sm-12">
+                        <img src="/images/map.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="row w_flat_input" >
+                    <div class="col-sm-8">
+                        <section class="flat-testimonial-contact clearfix fix-float-box bg-f7f7f7">
+                            <div class=" parallax parallax1">
+                                <div class="flat-row flat-form-contact-us"> 
+                                    <div class="flat-title">
+                                        <h2 class="title text-white left-title">联系我们</h2>
+                                    </div>
+                                    <form  class="form-horizontal" role="form" action="#" th:action="@{/greeting}"  method="post">
+                                        <div class="row-input-wrap">
+                                            <div class="input-wrap-name">
+                                                <label >客户姓名</label>
+                                                <input type="text" class="customerName" name="customerName" required="" placeholder="姓名">
+                                            </div>
+                                            <div class="input-wrap-mail">
+                                                <label >客户微信</label>
+                                                <input type="text" name="customerWechat" class="customerWechat" required="" placeholder="微信">
+                                            </div>
+                                        </div>
+                                        <div class="row-input-wrap">
+                                            <div class="input-wrap-name">
+                                                    <label >客户电话</label>
+                                                <input type="tel" class="customerPhone" id="customerPhone-phone" name="customerPhone" required="" placeholder="电话">
+                                            </div>
+                                            <div class="input-wrap-mail">
+                                                    <label >客户邮箱</label>
+                                                <input type="email" name="customerMail" id="customerPhone-emil" class="customerMail" required="" placeholder="邮箱">
+                                            </div>
+                                        </div>
+                                        <div class="input-wrap-message">
+                                                <label >客户留言</label>
+                                            <textarea name="customerMessage" class="customerMessage" required="" placeholder="留言" style="height:200px;" ></textarea>
+                                        </div>
+                
+                                        <div class="text-center mg-top-20">
+                                            <button type="submit" id="btn-comment" class="btn-effect" name="btn-comment" onclick="FormSuccess()" >
+                                                立即提交
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> 
+                        </section> 
+                    </div>
+                    <div class="col-sm-4 w_cont_del">
+                        <div class="widget ">
+                            <h4 class="widget-title">联系电话</h4>
+                            <p class="widget-text">0551-68999831</p>
+                            <a target="_blank"  href="http://wpa.qq.com/msgrd?v=3&uin=3278902005&site=qq&menu=yes">
+                                <img border="0" src="http://wpa.qq.com/pa?p=2:3278902005:51" alt="联系客服" title="联系客服" /></br>
+                            </a>
+                        </div>
+                        <div class="widget ">
+                            <h4 class="widget-title">公司地址</h4>
+                            <p class="widget-text">合肥市瑶海区站西路大众大厦1103号</p>
+                        </div>
+                        <div class="widget ">
+                            <h4 class="widget-title">联系邮箱</h4>
+                            <p class="widget-text">3278902005@qq.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <a id="scroll-top"></a> 
+
+    </body>
+
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/plugins.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+
+<script th:src="@{/rev-slider/js/jquery.themepunch.tools.min.js}"></script>
+<script th:src="@{/rev-slider/js/jquery.themepunch.revolution.min.js}"></script>
+<script th:src="@{/js/rev-slider.js}"></script>
+
+<!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.actions.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.kenburn.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.carousel.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.layeranimation.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.migration.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.navigation.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.parallax.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.slideanims.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.video.min.js}"></script>
+<script>
+    function FormSuccess() {
+       alert("提交成功，稍后有工作人员与您联系")
+    }
+   /* $("#customerPhone-phone").blur(function(){
+        var phone = $(this).value;
+        if(!(/^1[34578]\d{9}$/.test(phone))){
+            alert("手机号码有误，请重填");
+            return false;
+        }
+    })
+    $("#customerPhone-emil").blur(function(){
+        var aa=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        var emil = $(this).value;
+        if(!aa.test(emil)){
+            alert("youxiang1");
+            return false;
+        }
+    })*/
+</script>
+
+</html>

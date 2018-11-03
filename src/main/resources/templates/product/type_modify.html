@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>添加分类</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/font.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/weadmin.css}">
+    <script type="text/javascript" th:src="@{/layui/layui/layui.js}" charset="utf-8"></script>
+
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="weadmin-body">
+    <form class="layui-form" id="managerAdd">
+        <div class="layui-form-item">
+            <label for="typename" class="layui-form-label">
+                <span class="we-red">*</span>类别名称
+            </label>
+            <div class="layui-input-inline" style="display: none">
+                <input type="text" id="id" name="id" required="" lay-verify="required"
+                       th:value="${productTypeEntity.id}" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <input type="text" id="typename" name="typename" required="" lay-verify="required"
+                       th:value="${productTypeEntity.typeName}" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="typeweight" class="layui-form-label">
+                <span class="we-red">*</span>类别权重
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="typeweight" th:value="${productTypeEntity.typeWeight}" name="typeweight"
+                       required="" lay-verify="required"
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="we-red">*</span>请填写数字。数字越大，权重越高。
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+            </label>
+            <button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+        </div>
+
+    </form>
+</div>
+<script type="text/javascript">
+
+    layui.use(['form', 'layer'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            $ = layui.jquery;
+
+        //监听提交
+        form.on('submit(add)', function (data) {
+            var rolArr = [];
+            for (var i = 0; i < $('.roleId input').length; i++) {
+                var nextDone = $($('.roleId input')[i]).next('.layui-unselect')
+                if (nextDone.hasClass('layui-form-checked')) {
+                    rolArr.push($($('.roleId input')[i]).val())
+                }
+            }
+            $.ajax({
+                url: "/type/modifydo",
+                data: {
+                    "id": $.trim($('#id').val()),
+                    "typename": $.trim($('#typename').val()),
+                    "typeweight": $.trim($('#typeweight').val())
+                },
+                dataType: "json",
+                method: "POST",
+                success: function (data) {
+                    if (data.status === "1") {
+                        location.reload();
+
+                        // 获得frame索引
+                        var index = parent.layer.getFrameIndex(window.name);
+                        //关闭当前frame
+                        parent.layer.close(index);
+                        parent.location.reload();
+                        /*layer.alert("增加成功", {icon: 6}, function () {
+
+                        });*/
+                    }
+                },
+                error: function (request) {
+                    layer.confirm("页面异常，请联系管理员！", {icon: 2, title: "警告"})
+                }
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+
+</html>

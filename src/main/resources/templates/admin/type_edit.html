@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+      <link rel="stylesheet" type="text/css" th:href="@{/css/font.css}">
+      <link rel="stylesheet" type="text/css" th:href="@{/css/weadmin.css}">
+      <script type="text/javascript"  th:src="@{/layui/layui/layui.js}" charset="utf-8"></script>
+      <script type="text/javascript"  th:src="@{/js/eleDel.js}" charset="utf-8"></script>
+      <script type="text/javascript"  th:src="@{/js/admin.js}" ></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="weadmin-body">
+        <form class="layui-form">
+            <input type="hidden" name="id" id="id" th:value="${type.id}">
+          <div class="layui-form-item">
+              <label for="name" class="layui-form-label">
+                  <span class="we-red">*</span>分类名
+              </label>
+              <div class="layui-input-inline">
+                  <input type="text" id="name" name="name" required="" lay-verify="required"
+                  autocomplete="off" th:value="${type.name}" class="layui-input">
+              </div>
+          </div>
+
+          <div class="layui-form-item">
+              <button  class="layui-btn" lay-filter="add" lay-submit="">
+                  修改
+              </button>
+          </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+
+	    layui.use(['form','layer','admin'], function(){
+	      var form = layui.form,
+	      	admin = layui.admin,
+	      	layer = layui.layer,
+	        $ = layui.jquery;
+        
+          //自定义验证规则
+          form.verify({
+            name: function(value){
+              if($.trim($('#name')) === ''){
+                return '分类名不能为空';
+              }
+            }
+          });
+
+            //监听提交
+            form.on('submit(add)', function(data){
+                $.ajax({
+                    url: "type/edit",
+                    data: {"id":$("#id").val(),"name":$.trim($("#name").val())},
+                    dataType: "json",
+                    type: "POST",
+                    success: function(data) {
+                        if (data.state === 1){
+                            layer.alert("增加成功", {icon: 6},function () {
+                                var index = parent.layer.getFrameIndex(window.name);
+                                parent.layer.close(index);
+                            })
+                        }
+                    },
+                    error: function(request) {
+                        layer.confirm("页面异常，请联系管理员！",{icon:2,title:"警告"})
+                    }
+                });
+                return false;
+            });
+
+
+          
+        });
+    </script>
+  </body>
+
+</html>

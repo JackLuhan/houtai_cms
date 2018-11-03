@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>公司简介添加</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+      <link rel="stylesheet" type="text/css" th:href="@{/css/font.css}">
+      <link rel="stylesheet" type="text/css" th:href="@{/css/weadmin.css}">
+      <script type="text/javascript"  th:src="@{/layui/layui/layui.js}" charset="utf-8"></script>
+
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="weadmin-body">
+        <form class="layui-form" id="companyAdd">
+          <div class="layui-form-item">
+            <label for="jobName" class="layui-form-label">
+                <span class="we-red">*</span>职位名称
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="jobName" name="jobName"  lay-verify="required"
+                       autocomplete="off" class="layui-input"  placeholder="请输入职位名称" >
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+              <label for="jobDept" class="layui-form-label">
+                  <span class="we-red">*</span>所属部门
+              </label>
+              <div class="layui-input-inline">
+                  <input type="text" id="jobDept" name="jobDept" lay-verify="required"
+                         autocomplete="off" class="layui-input"  placeholder="请输入部门名称">
+              </div>
+              <!--<select  lay-filter="dept" id="jobDept" name="jobDept">
+                  <option value=""></option>
+                  <option value="0">运营部</option>
+                  <option value="1" selected="">工程部</option>
+                  <option value="2">人事部</option>
+                  <option value="3">市场部</option>
+                  <option value="4">行政部</option>
+                  <option value="5">其他</option>
+              </select>-->
+          </div>
+
+          <div class="layui-form-item">
+            <label for="jobLocation" class="layui-form-label">
+                <span class="we-red">*</span>工作地点
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="jobLocation" name="jobLocation" required="" lay-verify="required"
+                       autocomplete="off" class="layui-input"  placeholder="请输入工作地点">
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+            <label for="jobEduction" class="layui-form-label">
+                <span class="we-red">*</span>学历要求
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="jobEduction" name="jobEduction" required="" lay-verify="required"
+                       autocomplete="off" class="layui-input"  placeholder="请输入学历">
+            </div>
+             <!-- <select lay-filter="education" id="jobEduction" name="jobEduction">
+                  <option value=""></option>
+                  <option value="0">高中</option>
+                  <option value="1" selected="">大专</option>
+                  <option value="2">本科</option>
+                  <option value="3">研究生</option>
+                  <option value="4">其他</option>
+              </select>-->
+          </div>
+          <div class="layui-form-item">
+                <label for="jobYear" class="layui-form-label">
+                    <span class="we-red">*</span>工作年限
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="jobYear" name="jobYear" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input"  placeholder="请输入工作年限">
+                </div>
+          </div>
+
+            <div class="layui-form-item">
+                <label for="jobNum" class="layui-form-label">
+                    <span class="we-red">*</span>招聘人数
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="jobNum" name="jobNum" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input"  placeholder="请输入招聘人数">
+                </div>
+            </div>
+
+          <div class="layui-form-item">
+              <label for="jobDictate" class="layui-form-label">
+                  <span class="we-red">*</span>任职资格
+              </label>
+              <div class="layui-input-block">
+                  <textarea placeholder="请输入任职资格" id="jobDictate" name="jobDictate" class="layui-textarea" lay-verify="content" ></textarea>
+              </div>
+          </div>
+          <div class="layui-form-item">
+              <label class="layui-form-label">
+              </label>
+              <button  class="layui-btn" lay-filter="add" id="eSubmit" lay-submit="">增加</button>
+          </div>
+      </form>
+    </div>
+    <script type="text/javascript" th:inline="javascript">
+
+
+
+
+        layui.use(['form','upload','layedit','layer'], function(){
+          var form = layui.form,
+          	layer = layui.layer,
+            $ = layui.jquery,
+              upload = layui.upload,
+              layedit = layui.layedit;
+
+          layedit.set({
+                uploadImage: {
+                    url: /*[[@{/upload/img2}]]*/'', //接口url
+                    type:"post"
+                }});
+
+            var index = layedit.build('jobDictate');
+            //自定义验证规则
+          form.verify({
+              jobName: function(value){
+              if($.trim($('#jobName').val()) === ''){
+                return '职位名称不能为空';
+              }
+            },
+              jobDept: function(value){
+                  if($.trim($('#jobDept').val()) === ''){
+                      return '部门不能为空';
+                  }
+              },
+              jobLocation: function(value){
+                  if($.trim($('#jobLocation').val()) === ''){
+                      return '工作地点不能为空';
+                  }
+              },
+              jobEduction: function(value){
+                  if($.trim($('#jobEduction').val()) === ''){
+                      return '学历不能为空';
+                  }
+              },
+              jobYear: function(value){
+                  if($.trim($('#jobYear').val()) === ''){
+                      return '工作年限不能为空';
+                  }
+              },
+              jobDictate: function(value){
+                  if($.trim($('#jobDictate').val()) === ''){
+                      return '任职资格不能为空';
+                  }
+              }
+          });
+
+
+            var uploadInst = upload.render({
+                elem: '#test1'
+                ,url: /*[[@{/upload/img}]]*/''
+                ,before: function(obj){
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function(index, file, result){
+                        $('#demo1').attr('src', result); //图片链接（base64）
+                    });
+                }
+                ,done: function(res){
+                    //如果上传失败
+                    if(res.code > 0){
+                        return layer.msg('上传失败');
+                    }
+                    //上传成功
+                    document.getElementById("img_url").value = res.url;
+                }
+                ,error: function(){
+                    //演示失败状态，并实现重传
+                    var demoText = $('#demoText');
+                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                    demoText.find('.demo-reload').on('click', function(){
+                        uploadInst.upload();
+                    });
+                }
+            });
+
+
+          //监听提交
+          form.on('submit(add)', function(data){
+
+              console.log(layedit.getContent(index))
+              $.ajax({
+                  url: /*[[@{/job/add}]]*/'',
+                      data: {"jobName":$.trim($('#jobName').val()),
+                          "jobDept":$.trim($('#jobDept').val()),
+                          "jobLocation":$.trim($('#jobLocation').val()),
+                          "jobEduction":$.trim($('#jobEduction').val()),
+                          "jobYear":$.trim($('#jobYear').val()),
+                          "jobNum":$.trim($('#jobNum').val()),
+                          "jobDictate":$.trim(layedit.getContent(index))
+                      },
+                  dataType: "json",
+                  method: "POST",
+                  success: function(data) {
+                     if (data.state === 1){
+                         layer.alert("增加成功", {icon: 6},function () {
+                             // 获得frame索引
+                             var index = parent.layer.getFrameIndex(window.name);
+                             //关闭当前frame
+                             parent.layer.close(index);
+                             parent.location.reload()
+                         });
+                     }
+                  },
+                  error: function(request) {
+                      layer.confirm("页面异常，请联系管理员！",{icon:2,title:"警告"})
+                  }
+              });
+            return false;
+          });
+
+
+        });
+    </script>
+  </body>
+
+</html>

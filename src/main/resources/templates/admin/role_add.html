@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>角色管理-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<link rel="stylesheet" type="text/css" th:href="@{/css/font.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/weadmin.css}">
+		<script type="text/javascript"  th:src="@{/layui/layui/layui.js}" charset="utf-8"></script>
+		<script type="text/javascript"  th:src="@{/js/eleDel.js}" charset="utf-8"></script>
+		<script type="text/javascript"  th:src="@{/js/admin.js}" ></script>
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+		<div class="weadmin-body">
+			<form class="layui-form layui-form-pane">
+				<div class="layui-form-item">
+					<label for="name" class="layui-form-label">
+                        <span class="we-red">*</span>角色名
+                    </label>
+					<div class="layui-input-inline">
+						<input type="text" id="name" name="name" required="" lay-verify="required" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item layui-form-text">
+					<label class="layui-form-label">
+                        拥有权限
+                    </label>
+					<table class="layui-table layui-input-block">
+						<tbody>
+							<tr th:each="item: ${types}">
+								<td class="checkAll">
+									<span th:text="${item.name}"></span>
+									<input name="typeId" th:value="${item.id}" type="checkbox" class="typeId">
+								</td>
+								<td class="checkSon">
+									<span class="layui-input-block" th:each="perm: ${item.permissions}">
+										<input name="permId" th:value="${perm.id}" type="checkbox" class="permId" >
+										<label th:text="${perm.name}"></label>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="layui-form-item layui-form-text">
+					<label for="desc" class="layui-form-label">
+                        描述
+                    </label>
+					<div class="layui-input-block">
+						<textarea placeholder="请输入内容" id="desc" name="desc" class="layui-textarea"></textarea>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<button class="layui-btn" lay-submit="" lay-filter="add">增加</button>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			layui.use(['form', 'layer', 'admin'], function() {
+				var form = layui.form,
+					admin = layui.admin,
+					$ = layui.jquery,
+					layer = layui.layer;
+
+                //自定义验证规则
+                form.verify({
+                    required: function(value){
+                        if($.trim(value) === ''){
+                            return '角色名不能为空';
+                        }
+                    }
+                });
+
+                //监听提交
+                form.on('submit(add)', function(data){
+					var allArr = [];
+                    for(var i = 0;i<$('.checkAll .typeId').length;i++){
+                        var nextDone = $($('.checkAll .typeId')[i]).next('.layui-unselect')
+                        if(nextDone.hasClass('layui-form-checked')){
+                            allArr.push($($('.checkAll .typeId')[i]).val())
+						}
+					}
+					var checksonAll = [];
+                    for(var i = 0;i<$('.checkSon .permId').length;i++){
+                        var nextDone = $($('.checkSon .permId')[i]).next('.layui-unselect')
+                        if(nextDone.hasClass('layui-form-checked')){
+                            checksonAll.push($($('.checkSon .permId')[i]).val())
+                        }
+                    }
+                    $.ajax({
+                        url: "add",
+                        data: {"name":$.trim($('#name').val()),'typeId':allArr,'permId':checksonAll,"desc":$.trim($('#desc').val())},
+                        dataType: "json",
+                        type: "POST",
+                        success: function(data) {
+                            if (data.state === 1){
+                                layer.alert("增加成功", {icon: 6},function () {
+                                    // 获得frame索引
+                                    var index = parent.layer.getFrameIndex(window.name);
+                                    //关闭当前frame
+                                    parent.layer.close(index);
+                                });
+                            }
+                        },
+                        error: function(request) {
+                            layer.confirm("页面异常，请联系管理员！",{icon:2,title:"警告"})
+                        }
+                    });
+                    return false;
+                });
+
+
+
+			});
+		</script>
+	</body>
+
+</html>

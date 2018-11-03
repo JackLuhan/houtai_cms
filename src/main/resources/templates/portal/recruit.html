@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="UTF-8">
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>人才招聘</title>
+
+    <meta name="author" content="themsflat.com">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <!-- Responsive -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}">
+   <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/font.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/weadmin.css}">-->
+    <script type="text/javascript"  th:src="@{/layui/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript"  th:src="@{/js/eleDel.js}" charset="utf-8"></script>
+    <script type="text/javascript"  th:src="@{/js/admin.js}" ></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="bg-f6f6f6">
+
+
+<header id="header" class="style2">
+    <div class="container container-header">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-wrap style2 clearfix">
+                    <div id="logo">
+                        <a href="/portal/index/index">
+                            <img src="/images/logo.png"
+                                 alt="logo" width="320" height="36"
+                                 data-retina="/images/logo.png"
+                                 data-width="200"
+                                 data-height="26"></a>
+                    </div>
+                    <div class="mobile-button">
+                        <span></span>
+                    </div>
+                    <div class="nav-wrap style2">
+                        <nav id="mainnav" class="mainnav ">
+                            <ul class="menu">
+                                <li>
+                                    <a href="/portal/index/index" title="">首页</a>
+                                </li>
+                                <li>
+                                    <a class="sub-menu-uj" th:href="@{/portal/company/company}" title="">公司简介</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/portal/news/enterprise}" title="">新闻资讯</a>
+                                    <ul class="sub-menu sub-menu-u">
+                                        <li><a class="sub-menu-uj" th:href="@{/portal/news/enterprise}"
+                                               title="">企业新闻</a></li>
+                                        <li><a class="sub-menu-ui" th:href="@{/portal/news/industry}" title="">行业动态</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li >
+                                    <a href="/portal/project/index" title="">产品</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="/portal/project/index" title="">产品展示</a></li>
+                                        <li><a href="/portal/ypsc/index" title="">尤品商城</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a href=class="sub-menu-uj" th:href="@{/portal/job/job}" title="">人才招聘</a>
+                                </li>
+
+                                <li>
+                                    <a href="/portal/contactus/index">联系我们</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="flat-slider style2">
+    <div class="rev_slider_wrapper fullwidthbanner-container">
+        <div id="rev-slider1" class="rev_slider fullwidthabanner">
+            <ul>
+                <li data-transition="random">
+                    <!-- Main Image -->
+                    <img src="/images/recruit.jpg" alt="" data-bgposition="center center" data-no-retina>
+                    <div class="overlay"></div>
+                    <!-- Layers -->
+                    <div class="flat-tabs">
+                        <div class="tab-content-service" id="roofing">
+                            <div class="tp-caption tp-resizeme text-ffb922 font-rubik font-weight-500 text-center"
+                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                 data-fontsize="['48','48','32','20']"
+                                 data-lineheight="['60','60','40','30']"
+                                 data-width="full"
+                                 data-height="none"
+                                 data-whitespace="normal"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-mask_in="x:0px;y:[100%];"
+                                 data-mask_out="x:inherit;y:inherit;"
+                                 data-start="700"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on"><a href="#" class="text-white">加入我们，共同开启全新未来！</a></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="flat-faqs">
+    <div class="container bg-fff" style="padding:0;">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-horizontal">
+                    <div class="form-group" style="position:relative;margin-bottom:0;">
+                        <div class="input-group">
+                            <input type="text" id="title" name="title" th:value="${title}" placeholder="请输入职位名称" autocomplete="off" class="layui-input lf" style="width:90.86%;margin-bottom:0px;">
+                            <button class="layui-btn rt" lay-submit="" lay-filter="sreach"><i class="layui-icon">搜索</i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div style="width:100%;height:20px;background:#f6f6f6;"></div>
+
+            <div class="col-md-12">
+                <div class="recru_wrap">
+                    <span class="" style="line-height:40px;text-align:right;display: inline-block;width: 100%;">共有职位：<b th:text="${page.getTotalElements()}" ></b> 个</span>
+                    <div class="recur_tab_hd row">
+                        <div class="col-sm-3 ">职位名称</div>
+                        <div class="col-sm-2 ">所属部门</div>
+                        <div class="col-sm-2 ">工作地点</div>
+                        <div class="col-sm-3 ">更新时间</div>
+                        <div class="col-sm-2 ">详情</div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-toggle" th:each="job: ${page.content}" th:id="${job.id}">
+                            <div class="toggle-title">
+                                <div class="row">
+                                    <div class="col-sm-3 w_recur_name"><span th:text="${job.jobName}"></span></div>
+                                    <div class="col-sm-2 w_recur_division"><span th:text="${job.jobDept}"></span></div>
+                                    <div class="col-sm-2 w_recur_addr"><span th:text="${job.jobLocation}"></span></div>
+                                    <div class="col-sm-3 w_recur_time"><span th:text="${#dates.format(job.createTime,'yyyy-MM-dd')}"></span></div>
+                                    <div class="col-sm-2 w_recur_detail"></div>
+                                </div>
+                            </div>
+                            <div class="toggle-content">
+                                <h6>招聘人数：<span th:text="${job.jobNum}"></span> / 工作经验：<span th:text="${job.jobYear}"></span> / 工作地点：<span th:text="${job.jobLocation}"></span> / 发布于：<span th:text="${#dates.format(job.createTime,'yyyy-MM-dd')}"></span></h6>
+                                <p>职位要求：</p>
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-1" style="padding-right:0;">任职资格：</div>
+                                    <div class="col-sm-9 col-md-11">
+                                        <span th:utext="${job.jobDictate}"></span>
+                                    </div>
+                                </div>
+                               <!-- <button type="button" class="btn"
+                                        style="padding-top:9px;border-radius:3px;margin-top:35px;">在线笔试
+                                </button>-->
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="widget-footer pd-top-20 pd-bottom-20" style="background:#222429;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-10">
+                    <div class="widget w_widget_box">
+                        <div class="widget-text text-white">
+                            <h6 class="mg-top-10 mg-bottom-10">尤品移动软件开发公司</h6>
+                            <p class="w_widgetList"><a href="javascript:;">APP定制开发</a><a
+                                    href="javascript:;">Android开发</a><a href="javascript:;">iOS一站式开发</a><a
+                                    href="javascript:;">外包服务</a><a href="javascript:;">平面设计</a><a href="javascript:;">微信小程序开发</a><a
+                                    href="javascript:;">网站建设</a><a href="javascript:;">互联网营销</a><a href="javascript:;">系统开发</a>
+                            </p>
+                            <p>Copyright 2016 - 2019 安徽尤品信息科技有限公司 版权所有，保留所有权利 All Rights Reserved. 皖ICP备12008933号</p>
+                            <p>地址：合肥市瑶海区站西路大众大厦1103室</p>
+                            <a target="_blank" class="fixed-qq" href="http://wpa.qq.com/msgrd?v=3&uin=3278902005&site=qq&menu=yes">
+                                <img border="0" src="http://wpa.qq.com/pa?p=2:3278902005:51" alt="联系客服" title="联系客服" /></br>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-2" style="padding-left:20px;margin-top:20px;">
+                    <div class="w_widget_img">
+                        <img src="/images/erweima.png" alt="">
+                        <p>服务热线：8888-888-888</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a id="scroll-top"></a>
+
+
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/plugins.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+
+<!-- Slider -->
+<script th:src="@{/rev-slider/js/jquery.themepunch.tools.min.js}"></script>
+<script th:src="@{/rev-slider/js/jquery.themepunch.revolution.min.js}"></script>
+<script th:src="@{/js/rev-slider.js}"></script>
+<!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.actions.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.kenburn.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.carousel.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.layeranimation.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.migration.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.navigation.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.parallax.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.slideanims.min.js}"></script>
+<script th:src="@{/rev-slider/js/extensions/revolution.extension.video.min.js}"></script>
+
+</body>
+</html>
+

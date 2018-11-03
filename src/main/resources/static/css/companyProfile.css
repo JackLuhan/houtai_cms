@@ -1,0 +1,960 @@
+
+    
+/*@media only screen and (max-width: 1900px) { */
+   /*公司简介*/
+    .Gprofile-box{
+        height:998px;
+        background: url(../images/Gprofile-banner.png) no-repeat;
+    }
+    .Gprofile-box .Gprofile_ul{
+        color:#fff;
+        text-align: center;
+        /*padding-top:380px;*/
+        padding-top:13%;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L1{
+        font-size: 60px;
+        color:#fff;
+        margin-bottom:86px;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L2{
+        font-size: 36px;
+        color:#fff;
+        line-height: 48px;
+    }
+    .Gprofile_text{
+        height:242px;
+        position: relative;
+    }
+    .Gprofile_text_U{
+        height:272px;
+        box-shadow: 8px 8px 18px rgba(0,0,0,0.3);
+        position: absolute;
+        background: #fff;
+        top:-25px;
+        padding:0px 62px;
+    }
+    .Gprofile_text_U .Gprofile_text_Ula{
+        text-align: center;
+        font-size: 48px;
+        color:#333;
+        margin-top:64px;
+        margin-bottom:52px;
+    }
+    .Gprofile_text_U .Gprofile_text_Ulb{
+        font-size: 17px;
+        color:#333;
+        line-height: 32px;
+    }
+    /*公司简介“服务”“追求” service */
+    .Gprofile_service{
+        min-height:808px;
+        margin-top:25px;
+    }
+    .Gservice_U{
+        min-height:391px;
+        /*border:1px solid #dcdcdc;*/
+        padding-left:82px;
+    }
+    .Gservice_Ula{
+        float: left;
+        width:34%;
+    }
+    .Gservice_Ula p:nth-child(1){
+        font-size: 24px;
+        color:#333;
+        border-bottom:3px solid #eee;
+        width: 50px;
+        padding-bottom:8px;
+        margin-bottom:20px;
+        margin-top:58px;
+    }
+    .Gservice_Ula p:nth-child(2){
+        font-size: 18px;
+        color:#666;
+        line-height: 30px;
+    }
+    .Gservice_U .Gservice_Ulb{
+        float:right;
+        width: 61%;
+        min-height:391px;line-height: 391px;
+    }
+    .Gservice_Uf{
+        min-height:391px;
+        /*border:1px solid #dcdcdc;*/
+        padding-right:82px;
+        margin-top:24px;
+    }
+    .Gservice_Ufla{
+        float: right;
+        width:34%;
+    }
+    .Gservice_Ufla p:nth-child(1){
+        font-size: 24px;
+        color:#333;
+        border-bottom:3px solid #eee;
+        width: 50px;
+        padding-bottom:8px;
+        margin-bottom:20px;
+        margin-top:58px;
+    }
+    .Gservice_Ufla p:nth-child(2){
+        font-size: 18px;
+        color:#666;
+        line-height: 30px;
+    }
+    .Gservice_Uflb{
+        float:left;
+        width: 61%;
+        min-height:391px;line-height: 391px;
+    }
+    /*团队风采*/
+    .Gprofile_team{
+        margin-top:52px;
+        position: relative;
+    }
+    .Gprofile_teamP{
+        font-size: 48px;
+        color:#333;
+        text-align: center;
+        border-bottom:1px solid #fe9900;
+        width:60%;
+        margin:0 auto;
+        padding-bottom:30px;
+    }
+    .Gprofile_teamDiv{
+        margin-top:53px;
+    }
+    .Gprofile_teamDiv_P{
+        float:left;
+        width: 35%;
+    }
+    .Gprofile_teamDiv_U{
+        float:right;
+        width:60.5%;
+        margin-right:25px;
+    }
+    .Gprofile_teamDiv_UTo{
+        font-size: 16px;
+        color:#333;
+        line-height: 30px;
+        border-left:5px solid #fe9900;
+        margin-bottom:30px;
+        padding:20px 0px 20px 20px;
+        /*height:99px;*/
+        /*padding-top:20px;*/
+    }
+    .Gprofile_teamDiv_UTr span{
+        float: left;
+        display: inline-block;
+        width: 148px;
+        height:148px;
+        /*border:1px solid red;*/
+        border-radius: 50%;
+        line-height: 148px;
+        text-align: center;
+        font-size: 48px;
+        color:#333;
+        margin-right:70px;
+    }
+    .Gprofile_teamDiv_UTr span:nth-child(1){
+        border:3px solid #097c25;
+        margin-left:15px;
+    }
+    .Gprofile_teamDiv_UTr span:nth-child(2){
+        border:3px solid #fe9a03;
+    }
+    .Gprofile_teamDiv_UTr span:nth-child(3){
+        border:3px solid #a4dbf4;
+    }
+    .Gprofile_teamDiv_Upos{
+        position:absolute;right:60px;bottom:0;
+    }
+    /*底部手风琴*/
+    /*瑞丽深度开始*/
+    .flash4{width:56.5%;height:374px;margin:0px auto;margin-bottom:20px;position:relative;}
+    .flash4 ul li{width:170px;height:374px;position:relative;overflow:hidden;float:left;background: #fff;padding:5px;}
+    .flash4 ul li .imgTop{width: 472px;}
+    .flash4 ul li .imgTop img{width: 472px;height:315px;}
+    .flash4 ul li .imgTop img.tm{opacity:1;}
+    .flash4 ul li .imgCen{text-align: center;font-size: 24px;color:#333;display: none;height:56px;line-height:56px;}
+    
+    .flash4 ul li.first{width:472px;}
+    .flash4 ul li.fast{position:absolute;right:0px;bottom:0px;}
+    /*}*/
+
+
+@media only screen and (max-width: 1170px) {
+    /*.Gprofile-box{
+        border:1px solid red;
+    }*/
+    .Gprofile_text{
+        height:242px;
+        position: relative;
+        width: 80%;
+    }
+    .Gprofile_text_U{
+        height:272px;
+        box-shadow: 8px 8px 18px rgba(0,0,0,0.3);
+        position: absolute;
+        background: #fff;
+        top:-25px;
+        padding:0px 62px;
+        width: 100%;
+    }
+    .Gprofile_text_U .Gprofile_text_Ula{
+        text-align: center;
+        font-size: 48px;
+        color:#333;
+        margin-top:64px;
+        margin-bottom:52px;
+    }
+    .Gprofile_text_U .Gprofile_text_Ulb{
+        font-size: 17px;
+        color:#333;
+        line-height: 32px;
+    }
+    .Gprofile_service{
+        width: 80%;
+        /*padding-bottom:40px;*/
+        /*border:1px solid red;*/
+    }
+    .Gprofile_service .Gservice_U{
+        /*border:1px solid #000;*/
+        min-height:400px;
+        padding-left: 50px;
+    }
+    .Gprofile_service .Gservice_Uf{
+        /*border:1px solid #000;*/
+        min-height:400px;
+        padding-right:50px;
+    }
+    .Gservice_Ula p:nth-child(1){
+        margin-top:0px;
+        margin-bottom:10px;
+    }
+    .Gservice_Ufla p:nth-child(1){
+        margin-top:0px;
+        margin-bottom:10px;
+    }
+    /*团队风采*/
+    .Gprofile_team{
+        width: 80%;
+    }
+    .Gprofile_teamDiv_U{
+        margin-right:5px;
+    }
+    .Gprofile_teamDiv{
+        min-height:435px;
+    }
+    .Gprofile_teamDiv_Upos{
+        position:absolute;right:8%;bottom:0;
+    }
+    .Gprofile_teamDiv_UTo{
+        font-size: 14px;
+        line-height: 25px;
+        padding:20px 0px 20px 20px;
+    }
+}
+
+@media only screen and (max-width: 970px){
+    .Gprofile_teamDiv_UTr span{
+        margin-right:35px;
+    }
+    .Gprofile_teamDiv_UTr span:nth-child(3){
+        margin-right:0px;
+    }
+    .Gservice_Ula p:nth-child(2){
+        font-size: 16px;
+    }
+    .Gservice_Ufla p:nth-child(2){
+        font-size: 16px;
+    }
+    /*公司简介“服务”“追求” service */
+    .Gprofile_service .Gservice_U{
+        padding-left:10px;
+        /*border:1px solid red;*/
+        min-height:350px;
+    }
+    .Gservice_Ula{
+        width:38%;
+    }
+    .Gprofile_service .Gservice_Uf{
+        padding-right:10px;
+        /*border:1px solid red;*/
+        min-height:350px;
+    }
+    .Gservice_Ufla{
+        width:38%;
+    }
+    /*团队风采*/
+    .Gprofile_teamDiv_UTo{
+        font-size: 14px;
+        line-height: 25px;
+        padding:5px 0px 5px 15px;
+    }
+    .Gprofile_teamDiv{
+        min-height:400px;
+    }
+    .Gprofile_service{
+        min-height:730px;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    /*banner*/
+    .Gprofile-box{
+        height:445px;
+    }
+    .Gprofile-box .Gprofile_ul{
+        padding-top:25%;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L1{
+        font-size: 48px;
+        margin-bottom:36px;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L2{
+        font-size: 24px;
+    }
+    /*公司简介*/
+    .Gprofile_text{
+        min-height:245px;
+        width: 95%;
+    }
+    .Gprofile_text_U{
+        padding:0px 20px;
+        top:-35px;
+    }
+    .Gprofile_text_U .Gprofile_text_Ula{
+        margin-top:35px;
+        margin-bottom:45px;
+    }
+    /**/
+    .Gprofile_service{
+        min-height:1100px;
+        width: 95%;
+        /*border:1px solid red;*/
+    }
+    .Gprofile_service .Gservice_U{
+        min-height:570px;
+    }
+    .Gservice_Ula{
+        width: 100%;
+    }
+    .Gservice_U .Gservice_Ulb{
+        width: 100%;
+        min-height:250px;
+        line-height: 250px;
+    }
+    .Gservice_Uf{
+        margin-top:0px;
+    }
+    .Gservice_Ufla{
+        width: 100%;
+        margin-top:5px;
+    }
+    .Gservice_Uflb{
+        width: 100%;
+        min-height:250px;
+        line-height: 250px;
+    }
+    .Gprofile_teamDiv_UTr span{
+        width: 110px;
+        height:110px;
+        line-height: 110px;
+        font-size: 40px;
+
+    }
+    .flash4{
+        width: 90%;
+    }
+    .flash4 ul li{
+        width:100px;
+    }
+    .flash4 ul li.first{
+        width: 360px;
+    }
+}
+@media only screen and (max-width: 721px){
+    /*banner*/
+    .Gprofile-box{
+        height:445px;
+    }
+    .Gprofile-box .Gprofile_ul{
+        padding-top:25%;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L1{
+        font-size: 48px;
+        margin-bottom:36px;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L2{
+        font-size: 24px;
+    }
+    /*公司简介*/
+    .Gprofile_text{
+        min-height:245px;
+        width: 95%;
+    }
+    .Gprofile_text_U{
+        padding:0px 20px;
+        top:-35px;
+    }
+    .Gprofile_text_U .Gprofile_text_Ula{
+        margin-top:35px;
+        margin-bottom:45px;
+    }
+    /**/
+    .Gprofile_service{
+        min-height:960px;
+        width: 95%;
+        /*border:1px solid red;*/
+    }
+    .Gprofile_service .Gservice_U{
+        min-height:520px;
+    }
+    .Gservice_Ula{
+        width: 100%;
+    }
+    .Gservice_U .Gservice_Ulb{
+        width: 100%;
+        min-height:250px;
+        line-height: 250px;
+    }
+    .Gservice_Uf{
+        margin-top:0px;
+    }
+    .Gservice_Ufla{
+        width: 100%;
+    }
+    .Gservice_Uflb{
+        width: 100%;
+        min-height:250px;
+        line-height: 250px;
+    }
+    .Gprofile_teamDiv_UTr span{
+        width: 60px;
+        height:60px;
+        line-height: 60px;
+    }
+    /*团队风采*/
+    .Gprofile_team{
+        width: 95%;
+    }
+    .Gprofile_teamDiv{
+        min-height:710px;
+    }
+    .Gprofile_teamDiv_UTo{
+        font-size: 16px;
+    }
+    .Gprofile_teamDiv_P{
+        width: 100%;
+        text-align: center;
+    }
+    .Gprofile_teamDiv_U{
+        width:98.5%;
+        margin-top:10px;
+    }
+    .Gprofile_service .Gservice_Uf{
+        min-height:560px;
+    }
+    .Gservice_Ufla p:nth-child(1){
+        margin-top:15px;
+    }
+    .Gprofile_teamDiv_Upos{
+        right:15%;
+    }
+    .Gprofile_teamDiv_UTr span{
+        width: 110px;
+        height:110px;
+        font-size: 32px;
+        line-height: 110px;
+    }
+}
+@media only screen and (max-width: 561px){
+    /*banner*/
+    .Gprofile-box{
+        height:445px;
+    }
+    .Gprofile-box .Gprofile_ul{
+        padding-top:25%;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L1{
+        font-size: 48px;
+        margin-bottom:36px;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L2{
+        font-size: 24px;
+    }
+    /*公司简介*/
+    .Gprofile_text{
+        min-height:245px;
+        width: 95%;
+    }
+    .Gprofile_text_U{
+        padding:0px 20px;
+        top:-35px;
+    }
+    .Gprofile_text_U .Gprofile_text_Ula{
+        margin-top:35px;
+        margin-bottom:45px;
+    }
+    /**/
+    .Gprofile_service{
+        min-height:960px;
+        width: 95%;
+        /*border:1px solid red;*/
+    }
+    .Gprofile_service .Gservice_U{
+        min-height:470px;
+    }
+    .Gservice_Ula{
+        width: 100%;
+    }
+    .Gservice_U .Gservice_Ulb{
+        width: 100%;
+        min-height:250px;
+        line-height: 250px;
+    }
+    .Gservice_Uf{
+        margin-top:0px;
+    }
+    .Gservice_Ufla{
+        width: 100%;
+    }
+    .Gservice_Uflb{
+        width: 100%;
+        min-height:250px;
+        line-height: 250px;
+    }
+    .Gprofile_teamDiv_UTr span{
+        width: 60px;
+        height:60px;
+        line-height: 60px;
+    }
+    /*团队风采*/
+    .Gprofile_team{
+        width: 95%;
+    }
+    .Gprofile_teamDiv{
+        min-height:710px;
+    }
+    .Gprofile_teamDiv_UTo{
+        font-size: 16px;
+    }
+    .Gprofile_teamDiv_P{
+        width: 100%;
+        text-align: center;
+    }
+    .Gprofile_teamDiv_U{
+        width:98.5%;
+        margin-top:10px;
+    }
+    .Gprofile_service .Gservice_Uf{
+        min-height:455px;
+    }
+    .Gservice_Ufla p:nth-child(1){
+        margin-top:15px;
+    }
+    .Gprofile_teamDiv_Upos{
+        right:15%;
+    }
+    .Gprofile_teamDiv_UTr span{
+        width: 90px;
+        height:90px;
+        font-size: 24px;
+        line-height: 90px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    /*banner*/
+    .Gprofile-box{
+        height:445px;
+    }
+    .Gprofile-box .Gprofile_ul{
+        padding-top:25%;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L1{
+        font-size: 40px;
+        margin-bottom:36px;
+    }
+    .Gprofile-box .Gprofile_ul .Gprofile_ul_L2{
+        font-size: 18px;
+    }
+    /*公司简介*/
+    .Gprofile_text{
+        min-height:245px;
+        width: 95%;
+    }
+    .Gprofile_text_U{
+        padding:0px 20px;
+        top:-35px;
+    }
+    .Gprofile_text_U .Gprofile_text_Ula{
+        margin-top:35px;
+        margin-bottom:45px;
+    }
+    /**/
+    .Gprofile_service{
+        min-height:960px;
+        width: 95%;
+        /*border:1px solid red;*/
+    }
+    .Gprofile_service .Gservice_U{
+        min-height:470px;
+    }
+    .Gservice_Ula{
+        width: 100%;
+    }
+    .Gservice_U .Gservice_Ulb{
+        width: 100%;
+        min-height:250px;
+        line-height: 250px;
+    }
+    .Gservice_Uf{
+        margin-top:0px;
+    }
+    .Gservice_Ufla{
+        width: 100%;
+    }
+    .Gservice_Uflb{
+        width: 100%;
+        min-height:250px;
+        line-height: 250px;
+    }
+    .Gprofile_teamDiv_UTr span{
+        width: 60px;
+        height:60px;
+        line-height: 60px;
+    }
+    /*团队风采*/
+    .Gprofile_team{
+        width: 95%;
+    }
+    .Gprofile_teamDiv{
+        min-height:710px;
+    }
+    .Gprofile_teamDiv_UTo{
+        font-size: 16px;
+    }
+    .Gprofile_teamDiv_P{
+        width: 100%;
+        text-align: center;
+    }
+    .Gprofile_teamDiv_U{
+        width:98.5%;
+        margin-top:10px;
+    }
+    .Gprofile_service .Gservice_Uf{
+        min-height:555px;
+    }
+    .Gservice_Ufla p:nth-child(1){
+        margin-top:15px;
+    }
+    .Gprofile_teamDiv_Upos{
+        right:8%;
+    }
+    .Gprofile_teamDiv_UTr span{
+        width: 76px;
+        height:76px;
+        font-size: 20px;
+        line-height: 76px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .Gprofile_teamDiv{
+        min-height:670px;
+    }
+    .Gprofile_teamDiv_Upos{
+        right:4%;
+    }
+}
+
+/*********************************************************************************************/
+/***************************************新闻资讯******************************************************/
+    .Gnews-banner{
+        background: url(../images/Gnews-banner.png) no-repeat;
+        height:1002px;
+    }
+    .Gnews-banner-Ul{
+        text-align: center;
+        color:#fff;
+        padding-top:20%;
+    }
+    .Gnews-banner-Ul-L1{
+        font-size: 60px;
+        text-shadow: 3px 3px 3px #3e3e3e;
+        margin-bottom:5%;
+    }
+    .Gnews-banner-Ul-L2{
+        font-size: 36px;
+        text-shadow: 3px 3px 3px #3e3e3e;
+    }
+    /*新闻资讯*/
+    .Gnews-type{
+        border-bottom:1px solid #c9c9c9;
+        margin-top:5px;
+    }
+    .Gnews-type-ul{
+        padding:22px 0px;
+    }
+    .Gnews-type-ul li{
+        float: left;
+        margin-right:22px;
+        font-size: 28px;
+        color:#333;
+    }
+    .Gnews-text{
+        /*min-height:50px;*/
+        /*border:1px solid red;*/
+    }
+    .Gnews-textLF{
+        float: left;
+        width: 57%;
+        padding-right:15px;
+    }
+    .Gnews-textLF a:hover{
+        color:#333;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lo{
+        width:48%;
+        float: left;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lo .Gnews-textLFu1-pfist{
+        font-size: 24px;
+        color:#333;
+        margin-top:36px;
+        margin-bottom:22px;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lo .Gnews-textLFu1-psecnd{
+        font-size: 14px;
+        color:#333;
+        height: 200px;
+        line-height: 25px;
+        overflow: hidden;
+        position: relative;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lo .Gnews-textLFu1-psecnd::after{
+        content: '...'; position: absolute; right: 5px; bottom: 5px; background-color: #FFF;
+        font-size:20px;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lo .Gnews-textLFu1-pthid{
+        font-size: 12px;
+        color:#666;
+        margin-top:14px;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lt{
+        float: right;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lt img{
+        max-width: 319px;
+    }
+    /*Gnews-textLFu2*/
+    .Gnews-textLF .Gnews-textLFu2{
+        margin-top:42px;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lo{
+        width:25%;
+        height:158px;
+        /*background: #e5e5e5;*/
+        float: left;
+        /*padding-left:18px;*/
+    }
+    .Gnews-textLF .Gnews-textLFu2-lo img{
+        height: 100%;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lo .Gnews-textLFu1-pfist{
+        font-size: 48px;
+        color:#fe9900;
+        margin-top:35px;
+        margin-bottom:15px;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lo .Gnews-textLFu1-psecnd{
+        font-size: 18px;
+        color:#fe9900;
+        margin-top:4px;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lt{
+        float: right;
+        width: 72%;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lt .Gnews-textLFu1-pfist{
+        font-size: 24px;
+        color:#333;
+        margin-top:18px;
+        margin-bottom:12px;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lt .Gnews-textLFu1-psecnd{
+        font-size: 14px;
+        color:#333;
+        height: 72px;
+        line-height: 25px;
+        overflow: hidden;
+        position: relative;
+        /**/
+    }
+    .Gnews-textLF .Gnews-textLFu2-lt .Gnews-textLFu1-psecnd::after{
+        content: '...'; position: absolute; right: 5px; bottom: 0px; background-color: #FFF;
+        font-size:20px;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lt .Gnews-textLFu1-pthid{
+        font-size: 12px;
+        color:#666;
+    }
+
+    .Gnews-textRT{
+        float: right;
+        width:42%;
+    }
+    .Gnews-textRT p{
+        width: 96%;
+        margin-bottom:50px;
+    }
+    .Gnews-textRT p:nth-child(3){
+        margin-bottom:40px;
+    }
+    .Gnews-textRT p img{
+        width: 100%;
+    }
+    /*****************************type*******************************/
+    .Gnews-typeLFu1{
+        margin-top:20px;
+    }
+    .Gnews-typeLFu1 .Gnews-typeLFu1-lt{
+        float:right;
+        width:70%;
+    }
+    .Gnews-typeLFu1 .Gnews-typeLFu1-lt .typeLFu1-lt-pfist{
+        color:#333;
+        font-size: 24px;
+        margin-top:22px;
+        margin-bottom:22px;
+    }
+    .Gnews-typeLFu1 .Gnews-typeLFu1-lt .typeLFu1-lt-psecnd{
+        color:#333;
+        font-size: 14px;
+        margin-bottom:34px;
+    }
+    .Gnews-typeLFu1 .Gnews-typeLFu1-lt .typeLFu1-lt-psecnd span{
+        margin-right:52px;
+    }
+    .Gnews-typeLFu1 .Gnews-typeLFu1-lt .typeLFu1-lt-psecnd u{
+        text-decoration: none;
+    }
+    .Gnews-typeLFu1 .Gnews-typeLFu1-lt .typeLFu1-lt-pthild a{
+        margin-right:10px;
+    }
+    .Gnews-typeLFu2{
+        margin-top:34px;
+    }
+    .Gnews-typeLFu2 li{
+        margin-bottom:28px;
+        color:#333;
+        font-size: 14px;
+    }
+@media screen and (max-width:1170px){
+    /*新闻资讯-banner*/
+    .Gnews-banner-Ul-L2{
+        line-height: 48px;
+    }
+    .Gnews-type-ul{
+        width: 96%;
+    }
+    .Gnews-text{
+        width: 96%;
+    }
+    .Gnews-textLF{
+        width: 60%;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lt{
+        width: 51%;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lt img{
+        width: 100%;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lo{
+        height:148px; 
+    }
+    .Gnews-textLF .Gnews-textLFu1-lo .Gnews-textLFu1-pfist{
+        margin-top:22px;
+        margin-bottom:10px;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lo .Gnews-textLFu1-pthid{
+        margin-top:0px;
+    }
+
+    .Gnews-textRT{
+        width: 39%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:900px){
+    .Gnews-banner{
+        height:750px;
+    }
+    .Gnews-banner-Ul{
+        padding-top:30%;
+    }
+    .Gnews-banner-Ul-L1{
+        font-size: 40px;
+    }
+    .Gnews-banner-Ul-L2{
+        font-size: 24px;
+    }
+    .Gnews-textLF{
+        width: 96%;
+    }
+    .Gnews-textRT{
+        width: 96%;
+        margin-top:25px;
+    }
+}
+@media screen and (max-width:600px){
+    .Gnews-banner{
+        height:530px;
+    }
+    .Gnews-banner-Ul{
+        padding-top:35%;
+    }
+    .Gnews-banner-Ul-L1{
+        font-size: 36px;
+    }
+    .Gnews-banner-Ul-L2{
+        font-size: 24px;
+    }
+    .Gnews-textLF{
+        width: 96%;
+        padding-right:0px;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lo{
+        width: 100%;
+    }
+    .Gnews-textLF .Gnews-textLFu1-lt{
+        width: 96%;
+    }
+    .Gnews-textLF .Gnews-textLFu2-lt .Gnews-textLFu1-pfist{
+        margin-top:3px;
+        margin-bottom:10px;
+    }
+    .Gnews-textRT{
+        width: 96%;
+        margin-top:25px;
+    }
+    /*************************type*********************************/
+    .Gnews-banner-Ul-L1{
+        font-size: 26px;
+    }
+    .Gnews-banner-Ul-L2{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .Gnews-typeLFu1 .Gnews-typeLFu1-lt .typeLFu1-lt-pfist{
+        margin-top:16px;
+        margin-bottom:16px;
+    }
+    .Gnews-typeLFu1 .Gnews-typeLFu1-lt .typeLFu1-lt-psecnd{
+        margin-bottom:22px;
+    }
+}
+
+
+

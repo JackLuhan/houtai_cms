@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>产品管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/font.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/weadmin.css}">
+    <script type="text/javascript" th:src="@{/layui/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/js/eleDel.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/js/admin.js}"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="weadmin-nav">
+			<span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">产品</a>
+        <a>
+          <cite>产品管理</cite></a>
+      </span>
+    <a class="layui-btn layui-btn-sm" style="line-height:1.6em;margin-top:3px;float:right"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+</div>
+<div class="weadmin-body">
+    <div class="layui-row">
+    </div>
+    <div class="layui-row">
+        <form class="layui-form layui-col-md12 we-search" action="/product/seach">
+            <div class="layui-inline">
+                <div class="layui-input-inline">
+                    <select id="typeid" name="typeid">
+                        <option value="">请选择分类</option>
+                        <option th:each="item : ${list}" th:value="${item.id}" th:text="${item.typeName}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <input type="text" id="seachtext" name="seachtext" placeholder="请输入产品名称" autocomplete="off"
+                       class="layui-input">
+            </div>
+            <button class="layui-btn" lay-submit=""><i class="layui-icon">&#xe615;</i></button>
+        </form>
+    </div>
+    <div class="weadmin-block">
+        <button class="layui-btn" onclick="WeAdminShow('添加产品','/product/add')"><i class="layui-icon"></i>添加</button>
+        <span class="fr" style="line-height:40px">共有数据： <b th:text="${count}"></b>条</span>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>产品名称</th>
+            <th>产品类别</th>
+            <th>产品图片</th>
+            <th>最后修改时间</th>
+            <th>操作</th>
+        </thead>
+        <tbody>
+
+        <tr th:each="item: ${page.content}" th:id="${item.id}">
+            <td th:text="${item.productName}"></td>
+            <td style="width: 150px" th:text="${item.productTypeNames}"></td>
+            <td style="width: 150px"><a target="_blank" th:href="${item.pictures}"><img style="height: 30px;"
+                                                                                        th:src="${item.pictures}"/></a>
+            </td>
+            <td style="width: 150px" th:text="${#dates.format(item.createTime,'yyyy-MM-dd')}"></td>
+            <td class="td-manage">
+                <a title="编辑产品" th:onclick="'javascript:edit('+${item.id}+')'">
+                    <i class="layui-icon">&#xe642;</i>
+                </a>
+                <a title="删除产品" th:onclick="'javascript:del('+${item.id}+')'">
+                    <i class="layui-icon">&#xe640;</i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <div id="demo3">
+        </div>
+    </div>
+</div>
+</body>
+
+<script th:inline="javascript">
+    layui.use(['laypage', 'laydate', 'layer'], function () {
+        var laypage = layui.laypage
+            , layer = layui.layer
+            , $ = layui.jquery
+            , laydate = layui.laydate;
+        laypage.render({
+            elem: 'demo3'
+            , count: [[${page.getTotalElements()}]]
+            , first: '首页'
+            , last: '尾页'
+            , curr: [[${page.number}]] + 1
+            , prev: '<em>←</em>'
+            , next: '<em>→</em>'
+            , jump: function (obj, first) {
+                if (!first) {
+                    window.location.href = "index?pageNum=" + obj.curr
+                }
+            }
+        });
+        laydate.render({
+            elem: '#start'
+        });
+        laydate.render({
+            elem: '#end'
+        });
+
+        window.edit = function (id, w, h) {
+            if (w == null || w == '') {
+                w = ($(window).width() * 0.9);
+            }
+            ;
+            if (h == null || h == '') {
+                h = ($(window).height() - 50);
+            }
+            ;
+            layer.open({
+                type: 2,
+                area: [w + 'px', h + 'px'],
+                fix: false, //不固定
+                maxmin: true,
+                shadeClose: true,
+                shade: 0.4,
+                title: '编辑产品',
+                content: 'http://www.ypbhjtgw.com/product/edit?id=' + id
+            });
+        }
+
+        window.del = function (id) {
+            var data = tableCheck.getData();
+            layer.confirm('确认要删除吗？' + data, function (index) {
+                $.ajax({
+                    url: "http://www.ypbhjtgw.com/product/del",
+                    data: {
+                        "id": id
+                    },
+                    dataType: "json",
+                    type: "POST",
+                    success: function (data) {
+                        if (data.status === 1) {
+                            layer.msg('删除成功', {icon: 1, time: 1000}, function () {
+                                location.reload()
+                            })
+                        } else {
+                            layer.msg('删除失败', {icon: 1, time: 1000}, function () {
+                                location.reload()
+                            })
+                        }
+                    },
+                    error: function (request) {
+                        layer.confirm("页面异常，请联系管理员！", {icon: 2, title: "警告"})
+                    }
+                });
+            });
+        };
+
+
+    });
+</script>
+</html>
+
